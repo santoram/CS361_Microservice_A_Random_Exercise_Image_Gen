@@ -7,7 +7,6 @@ IMAGE_DIR = 'random_exercise_photos'
 app = Flask(__name__) #r eferenced this file
 CORS(app)
 
-
 @app.route('/random-image')
 def get_random_image():
     # Get a list of all files in the image directory
