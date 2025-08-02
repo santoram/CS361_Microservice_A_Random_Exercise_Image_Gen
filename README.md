@@ -19,3 +19,4 @@ This microservice provides random exercise-related images which can be leveraged
   *  If using REACT as the UI, please be advised that when using getEffect() with an empty array, it will render 2 images (the 1st image very quickly before landing on the 2nd) This is NOT a bug. The application is most likely being run in StrictMode by default. In Strict Mode, React will try to simulate the behavior of mounting, unmounting, and remounting a component to help developers uncover bugs during testing.
 
 ## UML Sequence Diagram
+![screenshot of uml](UML_Sequence.jpg)
