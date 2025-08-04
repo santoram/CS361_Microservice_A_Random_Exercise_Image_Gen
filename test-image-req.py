@@ -10,11 +10,13 @@ def request_and_open_image():
     """
     Call the image-generator microservice to get an exercise-image.
     """
+    print('connecting...')
     image_server_url = 'http://localhost:8000/random-image'
     try:
         response = requests.get(image_server_url)
         response.raise_for_status()
         if response.headers['Content-Type'] == 'image/jpeg':
+            print('image received')
             image_bytes = response.content
             image = Image.open(io.BytesIO(image_bytes))
             image.show()

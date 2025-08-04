@@ -9,6 +9,7 @@ IMAGE_DIR = 'random_exercise_photos'
 app = Flask(__name__)
 CORS(app)
 
+print('running microservice...')
 
 @app.route('/random-image')
 def get_random_image():
