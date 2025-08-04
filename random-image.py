@@ -3,7 +3,7 @@ import random
 from flask_cors import CORS
 from flask import Flask, send_file
 
-# This is the directory containing approx 75 exercise 
+# This is the directory containing approx 75 exercise images 
 # Ensure this is rooted in the same directory as this program
 IMAGE_DIR = 'random_exercise_photos'
 app = Flask(__name__)
@@ -32,4 +32,4 @@ if __name__ == '__main__':
     # check to make sure the file path exsists before execution
     # note this is running on port 8000
     os.makedirs(IMAGE_DIR, exist_ok=True)
-    app.run(port=8000, debug=True)
+    app.run(host='127.0.0.1', port=8000, debug=True)
