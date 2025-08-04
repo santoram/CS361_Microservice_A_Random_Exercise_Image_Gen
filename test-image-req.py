@@ -10,7 +10,7 @@ def request_and_open_image():
     """
     Call the image-generator microservice to get an exercise-image
     """
-    print('connecting...')
+    print('[connecting]...')
     image_server_url = 'http://localhost:8000/random-image'
     try:
         response = requests.get(image_server_url)
