@@ -9,14 +9,14 @@ IMAGE_DIR = 'random_exercise_photos'
 app = Flask(__name__)
 CORS(app)
 
-print('running microservice...')
+print('server listening on port 8000...')
 
 @app.route('/random-image')
 def get_random_image():
     """
     Gets a random exercise image from the diretory and returns it to the client
     """
-    
+    print("Request recieved. Searching...")
     # Get a list of all files in the image directory
     image_files = os.listdir(IMAGE_DIR)
     
@@ -25,6 +25,7 @@ def get_random_image():
     random_image_filename = random.choice(image_files)
     random_image_path = os.path.join(IMAGE_DIR, random_image_filename)
 
+    print("file found! Sending...")
     # Send the selected image file back to the client
     return send_file(random_image_path, mimetype='image/jpeg') # Adjust mimetype as needed
 

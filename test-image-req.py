@@ -16,10 +16,10 @@ def request_and_open_image():
         response = requests.get(image_server_url)
         response.raise_for_status()
         if response.headers['Content-Type'] == 'image/jpeg':
-            print('image received')
             image_bytes = response.content
             image = Image.open(io.BytesIO(image_bytes))
             image.show()
+            print("Image received and opened successfully!")
             return "Image received and opened successfully!"
         else:
             return f"Received unexpected content type: {response.headers['Content-Type']}"
